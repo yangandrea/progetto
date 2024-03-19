@@ -1,0 +1,26 @@
+h1{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+body{
+    background-color: CadetBlue;
+    font-family: Arial, sans-serif;
+}
+a:focus{
+    outline: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+label {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
