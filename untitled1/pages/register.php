@@ -22,4 +22,4 @@ if ($result->num_rows > 0) {
         echo "User registered successfully";
     }
 }
-echo "<br><a href='index.php'>Home</a>";
+echo "<br><a href='../index.php'>Home</a>";

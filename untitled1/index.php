@@ -23,14 +23,14 @@ $conn->close();
 <html>
 <head>
     <title>Product</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<button type="button"><a href="registrazione.php">Register</a></button>
+<button type="button"><a href="pages/registrazione.php">Register</a></button>
 <h1><?php echo $product['name']; ?></h1>
 <p><?php echo $product['description']; ?></p>
 <p>Price: <?php echo $product['price']; ?></p>
@@ -42,15 +42,15 @@ $conn->close();
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <img src="path/to/image1.jpg" class="img-fluid" alt="Responsive image">
+            <img src="images/prodotto1.jpg" class="img-fluid" alt="Responsive image">
             <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
         </div>
         <div class="col-sm">
-            <img src="path/to/image2.jpg" class="img-fluid" alt="Responsive image">
+            <img src="images/prodotto2.jpg" class="img-fluid" alt="Responsive image">
             <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
         </div>
         <div class="col-sm">
-            <img src="path/to/image3.jpg" class="img-fluid" alt="Responsive image">
+            <img src="images/prodotto3.jpg" class="img-fluid" alt="Responsive image">
             <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
         </div>
     </div>
