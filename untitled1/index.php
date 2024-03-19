@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "Connessione.php";
+include "pages/Connessione.php";
 $sql = "SELECT name, description, price FROM Products WHERE id=1";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
