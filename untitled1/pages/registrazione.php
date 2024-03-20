@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-<div id="#paginaDiRegistrazione">
+<div id="paginaDiRegistrazione">
     <form action="register.php" method="post">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" placeholder="inserisci un nome utente"><br>
