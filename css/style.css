@@ -4,8 +4,9 @@ h1{
     text-align: center;
 }
 body{
-    background-color: CadetBlue;
+    background-color: yellow;
     font-family: Arial, sans-serif;
+    background-size: cover;
 }
 a:focus{
     outline: none;
@@ -31,4 +32,7 @@ form {
     margin: 20px auto; /* Questo centra il div sulla pagina e aggiunge un po' di spazio sopra e sotto */
     width: 50%; /* Questo imposta la larghezza del div al 50% della larghezza della pagina */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Questo aggiunge un'ombra al div per dargli un aspetto 3D */
+}
+.ciao{
+    background: cyan;
 }

@@ -6,7 +6,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $email = $_POST['email'];
     $birthdate = $_POST['birthdate'];
+
+    $birthdateTimestamp = strtotime($birthdate);
+    $Timestamp = strtotime(date("Y-m-d"));
+
+    if ($birthdateTimestamp > $Timestamp) {
+        echo "La data di nascita è superiore alla data corrente.";
+        $_SESSION['username'] = $username;
+        $_SESSION['password'] = $password;
+        $_SESSION['email'] = $email;
+        echo "<br><a href='registrazione.php'>Torna alla registrazione</a>";
+        exit;
+    }
 }
+
 $sql = "SELECT * FROM Users WHERE username= '$username' OR email= '$email'";
 $result = $conn->query($sql);
 
@@ -23,3 +36,4 @@ if ($result->num_rows > 0) {
     }
 }
 echo "<br><a href='../index.php'>Home</a>";
+?>

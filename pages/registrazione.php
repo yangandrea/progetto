@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,13 +15,21 @@
 <div id="paginaDiRegistrazione">
     <form action="register.php" method="post">
         <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="inserisci un nome utente"><br>
+        <input type="text" id="username" name="username" placeholder="inserisci un nome utente" required oninvalid="this.setCustomValidity('Inserisci il tuo nome utente')"
+               oninput="this.setCustomValidity('')" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>">
+        <br>
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="inserisci una password"><br>
+        <input type="password" id="password" name="password" placeholder="inserisci una password" required oninvalid="this.setCustomValidity('Inserisci una password valida')"
+               oninput="this.setCustomValidity('')" value="<?php echo isset($_SESSION['password']) ? $_SESSION['password'] : ''; ?>">
+        <br>
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="inserisci una mail"><br>
+        <input type="email" id="email" name="email" placeholder="inserisci una mail" required oninvalid="this.setCustomValidity('Inserisci un email valida')"
+               oninput="this.setCustomValidity('')" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
+        <br>
         <label for="birthdate">Birthdate:</label><br>
-        <input type="date" id="birthdate" name="birthdate" placeholder="inserisci la data"><br>
+        <input type="date" id="birthdate" name="birthdate" placeholder="inserisci la data" required oninvalid="this.setCustomValidity('Inserisci una data valida')"
+               oninput="this.setCustomValidity('')" >
+        <br>
         <input type="submit" value="Submit">
     </form>
 </div>

@@ -29,7 +29,7 @@ $conn->close();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="bg-warning">
 <button type="button"><a href="pages/registrazione.php">Register</a></button>
 <h1><?php echo $product['name']; ?></h1>
 <p><?php echo $product['description']; ?></p>
@@ -42,15 +42,15 @@ $conn->close();
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <img src="images/prodotto1.jpg" class="img-fluid" alt="Responsive image">
+            <img src="Images/prodotto1.jpg" class="img-fluid" alt="Responsive image">
             <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
         </div>
         <div class="col-sm">
-            <img src="images/prodotto2.jpg" class="img-fluid" alt="Responsive image">
+            <img src="Images/prodotto2.jpg" class="img-fluid" alt="Responsive image">
             <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
         </div>
         <div class="col-sm">
-            <img src="images/prodotto3.jpg" class="img-fluid" alt="Responsive image">
+            <img src="Images/prodotto3.jpg" class="img-fluid" alt="Responsive image">
             <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
         </div>
     </div>
