@@ -1,0 +1,34 @@
+h1{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+body{
+    background-color: CadetBlue;
+    font-family: Arial, sans-serif;
+}
+a:focus{
+    outline: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+label {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+
+#paginaDiRegistrazione {
+    border: 1px solid #000; /* Questo crea un bordo nero di 1px */
+    padding: 20px; /* Questo aggiunge un po' di spazio tra il bordo e il contenuto */
+    margin: 20px auto; /* Questo centra il div sulla pagina e aggiunge un po' di spazio sopra e sotto */
+    width: 50%; /* Questo imposta la larghezza del div al 50% della larghezza della pagina */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Questo aggiunge un'ombra al div per dargli un aspetto 3D */
+}
