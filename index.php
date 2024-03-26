@@ -1,17 +1,27 @@
 <?php
 session_start();
 include "pages/Connessione.php";
-$sql = "SELECT name, description, price FROM Products WHERE id=1";
+$sql = "SELECT id, name, description, price FROM Products";
 $result = $conn->query($sql);
+$products = [];
 if ($result->num_rows > 0) {
-    $product = $result->fetch_assoc();
+    while($product = $result->fetch_assoc()) {
+        $products[] = $product;
+    }
 } else {
     echo "No product found.";
     exit;
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_SESSION['username'])) {
-        echo 'Adding to cart...';
+        $product_id = $_POST['product_id'];
+        foreach ($products as $product) {
+            if ($product['id'] == $product_id) {
+                $_SESSION['cart'][$product_id] = $product;
+                echo 'Adding to cart...';
+                break;
+            }
+        }
     } else {
         echo 'You must be logged in to add items to your cart.';
     }
@@ -31,30 +41,34 @@ $conn->close();
 </head>
 <body class="bg-warning">
 <button type="button"><a href="pages/registrazione.php">Register</a></button>
-<h1><?php echo $product['name']; ?></h1>
-<p><?php echo $product['description']; ?></p>
-<p>Price: <?php echo $product['price']; ?></p>
-
-<!--<form method="post">-->
-<!--    <button type="submit" name="addToCart">Add to cart</button>-->
-<!--</form>-->
-
+<button type="button"><a href="pages/login.php">login</a></button>
+<button type="button"><a href="pages/admin.php">Admin</a></button>
+<button type="button"><a href="pages/carello.php">carello</a></button>
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-            <img src="Images/prodotto1.jpg" class="img-fluid" alt="Responsive image">
-            <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
-        </div>
-        <div class="col-sm">
-            <img src="Images/prodotto2.jpg" class="img-fluid" alt="Responsive image">
-            <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
-        </div>
-        <div class="col-sm">
-            <img src="Images/prodotto3.jpg" class="img-fluid" alt="Responsive image">
-            <button type="button" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
-        </div>
+        <?php foreach ($products as $product): ?>
+            <div class="col-sm">
+                <img src="Images/prodotto1.jpg" class="img-fluid" alt="Responsive image">
+                <h2><?php echo $product['name']; ?></h2>
+                <p><?php echo $product['description']; ?></p>
+                <p>Price: <?php echo $product['price']; ?></p>
+                <form method="post" action="pages/carello.php">
+                    <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                    <button type="submit" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
+                </form>
+            </div>
+    </div>
+    <div class="col-sm">
+        <img src="Images/prodotto2.jpg" class="img-fluid" alt="Responsive image">
+        <h2><?php echo $product['name']; ?></h2>
+        <p><?php echo $product['description']; ?></p>
+        <p>Price: <?php echo $product['price']; ?></p>
+        <form method="post" action="pages/carello.php">
+            <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+            <button type="submit" class="btn btn-primary" name="addToCart">Aggiungi al carrello</button>
+        </form>
     </div>
 </div>
-
+<?php endforeach; ?>
 </body>
 </html>

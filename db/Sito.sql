@@ -7,7 +7,6 @@ CREATE TABLE Products (
                           name VARCHAR(255),
                           description TEXT,
                           price DECIMAL(10,2),
-                          image_url VARCHAR(255),
                           PRIMARY KEY(id)
 );
 CREATE TABLE Users (
@@ -29,5 +28,7 @@ CREATE TABLE Orders (
                         PRIMARY KEY(id),
                         FOREIGN KEY(user_id) REFERENCES Users(id)
 );
-INSERT INTO Products (name, description, price, image_url)
-VALUES ('Nome del prodotto', 'Descrizione del prodotto', 99.99, 'https://en.wikipedia.org/wiki/Koala#/media/File:Koala_climbing_tree.jpg');
+INSERT INTO Products (name, description, price)
+VALUES ('Nome del prodotto', 'Descrizione del prodotto', 99.99);
+VALUES ('integrali', 'matematica', 300);
+VALUES ('fisica', 'fisica', 200);

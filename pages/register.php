@@ -18,6 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<br><a href='registrazione.php'>Torna alla registrazione</a>";
         exit;
     }
+
+    if (strlen($password) < 8) {
+        echo "La password deve contenere almeno 8 caratteri.";
+        echo "<br><a href='registrazione.php'>Torna alla registrazione</a>";
+        exit;
+    }
 }
 
 $sql = "SELECT * FROM Users WHERE username= '$username' OR email= '$email'";
@@ -35,5 +41,8 @@ if ($result->num_rows > 0) {
         echo "User registered successfully";
     }
 }
-echo "<br><a href='../index.php'>Home</a>";
 ?>
+<br>
+<a href='../index.php'>Home</a>
+<a href='admin.php'>Login as Admin</a>
+<a href="login.php">fai l'accesso</a>
